@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormControlLabel, FormLabel, Paper, Radio} from "@mui/material";
 
-function ReferendumSummary(props) {
+function ReferendumSummary({referendumAnswer}) {
     return (
         <Paper sx={{
             display: 'flex',
@@ -15,9 +15,9 @@ function ReferendumSummary(props) {
                 Should the United Kingdom remain a member of the European Union or leave the European Union?
             </FormLabel>
             <FormControlLabel
-                value="yes"
+                value={referendumAnswer}
                 control={<Radio checked={true}/>}
-                label="Remain a member of the European Union"
+                label={referendumAnswer}
                 labelPlacement="start"
             />
         </Paper>

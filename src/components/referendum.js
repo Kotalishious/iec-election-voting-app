@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FormControl, FormControlLabel, FormLabel, Paper, Radio, RadioGroup, Typography} from "@mui/material";
 
-function Referendum(props) {
-    const [value, setValue] = useState();
-
+function Referendum({referendumAnswer, setReferendumAnswer}) {
     const handleChange = (event) => {
-        setValue(event.target.value);
+        setReferendumAnswer(event.target.value);
     };
     return (
         <Paper sx={{
@@ -26,17 +24,17 @@ function Referendum(props) {
                 <RadioGroup
                     aria-labelledby="referendum-radio-buttons"
                     name="referendum-radio-buttons"
-                    value={value}
+                    value={referendumAnswer}
                     onChange={handleChange}
                 >
                     <FormControlLabel
-                        value="yes"
+                        value="Remain a member of the European Union"
                         control={<Radio/>}
                         label="Remain a member of the European Union"
                         labelPlacement="start"
                     />
                     <FormControlLabel
-                        value="no"
+                        value="Leave the European Union"
                         control={<Radio/>}
                         label="Leave the European Union"
                         labelPlacement="start"

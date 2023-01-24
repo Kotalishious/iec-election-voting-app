@@ -1,24 +1,29 @@
 import React from 'react';
-import {Avatar, Paper, Typography} from "@mui/material";
+import {Avatar, FormControlLabel, Paper, Radio, Typography} from "@mui/material";
 
-function Candidate(props) {
+function Candidate({candidate}) {
     return (
         <article>
             <Paper sx={{
-                display:'flex',
-                flexDirection:'row',
-                p:1,
-                m:1
+                display: 'flex',
+                flexDirection: 'row',
+                p: 1,
+                m: 1
             }}>
-                <Avatar alt='candidate-name' sx={{mr:'2rem'}}/>
+                <Avatar alt={candidate?.party} sx={{mr: '2rem'}} src={candidate?.logo}/>
                 <div>
                     <Typography align='left'>
-                        Koketso Morapedi
+                        {candidate?.name}
                     </Typography>
                     <Typography align='left'>
-                        Botswana Democratic Party (BDP)
+                        {candidate?.party}
                     </Typography>
                 </div>
+                <FormControlLabel
+                    value={`${candidate?.name}`}
+                    control={<Radio/>}
+                    labelPlacement="end"
+                />
             </Paper>
         </article>
     );

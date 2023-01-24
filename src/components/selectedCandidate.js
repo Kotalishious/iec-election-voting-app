@@ -1,22 +1,22 @@
 import React from 'react';
 import {Avatar, Card, Typography} from "@mui/material";
 
-function SelectedCandidate({title}) {
+function SelectedCandidate({candidate, title}) {
     return (
         <Card sx={{
-            m:1,
-            p:3
+            m: 1,
+            p: 3
         }}>
             <Typography>
                 {title}
             </Typography>
-            <Avatar alt='candidate-name' sx={{mr: '2rem'}}/>
+            <Avatar src={candidate?.logo} alt='candidate-name' sx={{mr: '2rem'}}/>
             <div>
                 <Typography align='left'>
-                    Koketso Morapedi
+                    {candidate?.name}
                 </Typography>
                 <Typography align='left'>
-                    Botswana Democratic Party (BDP)
+                    {candidate?.party}
                 </Typography>
             </div>
         </Card>

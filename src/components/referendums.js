@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Paper, Typography} from "@mui/material";
 import Referendum from "./referendum";
 
-function Referendums(props) {
+function Referendums({referendumAnswer, setReferendumAnswer}) {
     return (
         <Box
             sx={{
@@ -22,11 +22,7 @@ function Referendums(props) {
                 <Typography align='left' variant='h5'>
                     Vote on the following referendums
                 </Typography>
-
-                <Referendum/>
-                <Referendum/>
-                <Referendum/>
-
+                <Referendum referendumAnswer={referendumAnswer} setReferendumAnswer={setReferendumAnswer}/>
             </Paper>
 
         </Box>
