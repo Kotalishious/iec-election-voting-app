@@ -13,7 +13,7 @@ function Login(props) {
             email: data.get('email'),
             password: data.get('password'),
         });
-        navigate('/')
+        navigate('/home')
     };
     return (
         <Container component="main" maxWidth="xs">
